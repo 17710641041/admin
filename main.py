@@ -1,5 +1,4 @@
 """
-# python3
 # -*- coding:utf-8 -*-
 # Author: 宋国君
 # Email: 673903363.com
