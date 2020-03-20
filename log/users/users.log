@@ -1,0 +1,4 @@
+2020-03-20 22:44:39,046 users_views.py[line:49] DEBUG RegistHandle: regist successfully
+2020-03-20 22:50:39,147 users_views.py[line:49] DEBUG RegistHandle: regist successfully
+2020-03-20 22:50:57,795 users_views.py[line:44] INFO RegistHandle: request argument incorrect
+2020-03-20 22:51:04,530 users_views.py[line:49] DEBUG RegistHandle: regist successfully
