@@ -9,10 +9,8 @@ import platform
 import tornado.ioloop
 import tornado.web
 import os
-import sys
 from tornado.options import define, options
 from common.url_router import include, url_wrapper
-from models import initdb
 from sqlalchemy.orm import scoped_session, sessionmaker
 from conf.base import BaseDB, engine
 
