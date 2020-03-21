@@ -10,3 +10,13 @@ views：视图函数，业务逻辑代码目录
 main.py：Tornado 主程序入口
 models.py：数据库表结构定义
 ```
+
+#### 项目依赖模块
+
+```buildoutcfg
+pip install mysqlclient-1.4.6-cp38-cp38-win_amd64.whl
+https://pypi.org/project/mysqlclient/#files
+pip install tornado
+pip install mysql-connector-python
+pip install sqlalchemy
+```

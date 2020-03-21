@@ -2,3 +2,9 @@
 2020-03-20 22:50:39,147 users_views.py[line:49] DEBUG RegistHandle: regist successfully
 2020-03-20 22:50:57,795 users_views.py[line:44] INFO RegistHandle: request argument incorrect
 2020-03-20 22:51:04,530 users_views.py[line:49] DEBUG RegistHandle: regist successfully
+2020-03-21 12:56:28,504 users_views.py[line:65] DEBUG RegistHandle: insert db, user: 18600694874
+2020-03-21 12:56:28,504 users_views.py[line:72] DEBUG RegistHandle: regist successfully
+2020-03-21 13:00:43,860 users_views.py[line:65] DEBUG RegistHandle: insert db, user: 18600694874
+2020-03-21 13:00:58,343 users_views.py[line:65] DEBUG RegistHandle: insert db, user: 18600694874
+2020-03-21 13:00:58,346 users_views.py[line:72] DEBUG RegistHandle: regist successfully
+2020-03-21 13:02:05,816 users_views.py[line:65] DEBUG RegistHandle: insert db, user: 18600694875

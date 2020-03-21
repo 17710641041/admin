@@ -4,6 +4,7 @@
 # Email: 673903363.com
 # Version: 商城项目入口文件
 """
+
 import platform
 import tornado.ioloop
 import tornado.web
@@ -11,6 +12,9 @@ import os
 import sys
 from tornado.options import define, options
 from common.url_router import include, url_wrapper
+from models import initdb
+from sqlalchemy.orm import scoped_session, sessionmaker
+from conf.base import BaseDB, engine
 
 # windows 系统下 tornado 使用 使用 SelectorEventLoop
 if platform.system() == "Windows":
@@ -30,7 +34,7 @@ class Application(tornado.web.Application):
             template_path=os.path.join(os.path.dirname(__file__), "templates")
         )
         tornado.web.Application.__init__(self, handlers, **settings)
-
+        self.db = scoped_session(sessionmaker(bind=engine, autocommit=False, autoflush=True, expire_on_commit=False))
 
 if __name__ == '__main__':
     print("Tornado server is ready for service\r")
