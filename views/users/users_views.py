@@ -11,7 +11,7 @@ from common.commons import (http_response, serialize)
 # 从配置文件中导入错误码
 from conf.base import (ERROR_CODE)
 
-from module.user_module import (Users)
+from module.user.user_module import (Users)
 
 ########## 登录日志 #############
 logFilePath = "log/users/users.log"
@@ -57,12 +57,8 @@ class loginHandle(tornado.web.RequestHandler):
                 #http_response(self, ERROR_CODE['40004'], 40004)
             #else:
             # 处理成功后，返回成功码“0”及成功信息“ok”
-            jsonData = serialize(ex_user)
-            print("--------------------")
-            print(jsonData)
-            del jsonData['password']
             logger.debug("loginHandle: regist successfully")
-            http_response(self, jsonData, 40000)
+            http_response(self, "ERROR_CODE['40000']", 40000)
         else:
             logger.debug("loginHandle: 用户信息不存在")
             http_response(self, ERROR_CODE['40003'], 40003)

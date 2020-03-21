@@ -63,3 +63,5 @@
 2020-03-21 23:49:10,812 users_views.py[line:116] DEBUG RegistHandle: regist successfully
 2020-03-21 23:51:23,924 users_views.py[line:108] DEBUG RegistHandle: insert db, user: 18600694893
 2020-03-21 23:51:23,986 users_views.py[line:115] DEBUG RegistHandle: regist successfully
+2020-03-21 23:52:06,763 users_views.py[line:108] DEBUG RegistHandle: insert db, user: 18600694894
+2020-03-21 23:52:06,766 users_views.py[line:115] DEBUG RegistHandle: regist successfully

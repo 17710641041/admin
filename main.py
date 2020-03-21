@@ -32,7 +32,14 @@ class Application(tornado.web.Application):
             template_path=os.path.join(os.path.dirname(__file__), "templates")
         )
         tornado.web.Application.__init__(self, handlers, **settings)
-        self.db = scoped_session(sessionmaker(bind=engine, autocommit=False, autoflush=True, expire_on_commit=False))
+        self.db = scoped_session(
+            sessionmaker(
+                bind=engine,
+                autocommit=False,
+                autoflush=True,
+                expire_on_commit=False
+            )
+        )
 
 if __name__ == '__main__':
     print("Tornado server is ready for service\r")
