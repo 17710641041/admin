@@ -96,3 +96,4 @@
 2020-03-22 14:33:29,122 users_views.py[line:51] INFO usersGet: request argument incorrect
 2020-03-22 14:33:50,283 users_views.py[line:51] INFO usersGet: request argument incorrect
 2020-03-22 14:34:07,732 users_views.py[line:62] DEBUG loginHandle: regist successfully
+2020-03-22 19:42:48,215 users_views.py[line:139] DEBUG loginHandle: regist successfully

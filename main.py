@@ -23,7 +23,8 @@ if platform.system() == "Windows":
 class Application(tornado.web.Application):
     def __init__(self):
         handlers = url_wrapper([
-            (r"/users/", include('views.users.users_urls'))
+            (r"/users/", include('views.app.users.users_urls')),
+            (r"/goods/", include('views.admin.goods.goods_urls'))
         ])
         # 定义 Tornado 服务器的配置项，如 static/templates 目录位置、debug 级别等
         settings = dict(

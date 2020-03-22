@@ -17,7 +17,7 @@ from common.commons import (http_response )
 # 从配置文件中导入错误码
 from conf.base import (ERROR_CODE)
 
-from module.user.user_module import (Users)
+from module.app.user.user_module import (Users)
 
 ########## 登录日志 #############
 logFilePath = "log/users/users.log"
