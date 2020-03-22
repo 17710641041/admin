@@ -1,3 +1,5 @@
+import json
+
 import tornado.web
 import logging
 import hashlib
@@ -5,8 +7,12 @@ from tornado.escape import json_decode
 from logging.handlers import TimedRotatingFileHandler
 from datetime import datetime
 
+from conf.toJSon import (
+    AlchemyEncoder
+)
+
 # 从commons中导入http_response方法
-from common.commons import (http_response, serialize)
+from common.commons import (http_response )
 
 # 从配置文件中导入错误码
 from conf.base import (ERROR_CODE)
@@ -52,13 +58,20 @@ class loginHandle(tornado.web.RequestHandler):
             http_response(self, ERROR_CODE['40001'], 40001)
             return
         ex_user = self.db.query(Users).filter_by(phone=phone).first()
+
         if ex_user:
-            #if(password != ex_user.password):
-                #http_response(self, ERROR_CODE['40004'], 40004)
-            #else:
-            # 处理成功后，返回成功码“0”及成功信息“ok”
-            logger.debug("loginHandle: regist successfully")
-            http_response(self, "ERROR_CODE['40000']", 40000)
+            hash = hashlib.md5()
+            hash.update(bytes(password, encoding='utf-8'))
+            if(hash.hexdigest() != ex_user.password):
+                http_response(self, ERROR_CODE['40004'], 40004)
+            else:
+                #转json字符串
+                userData = json.dumps(ex_user, cls=AlchemyEncoder)
+                obj = json.loads(userData)
+                del obj["password"]
+                # 处理成功后，返回成功码“0”及成功信息“ok”
+                logger.debug("loginHandle: regist successfully")
+                http_response(self, obj, 40000)
         else:
             logger.debug("loginHandle: 用户信息不存在")
             http_response(self, ERROR_CODE['40003'], 40003)
@@ -109,4 +122,4 @@ class RegistHandle(tornado.web.RequestHandler):
             self.db.commit()
             self.db.close()
             logger.debug("RegistHandle: regist successfully")
-            http_response(self, '', 40000)
+            http_response(self, ERROR_CODE['40000'], 40000)

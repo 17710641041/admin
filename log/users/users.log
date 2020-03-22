@@ -65,3 +65,20 @@
 2020-03-21 23:51:23,986 users_views.py[line:115] DEBUG RegistHandle: regist successfully
 2020-03-21 23:52:06,763 users_views.py[line:108] DEBUG RegistHandle: insert db, user: 18600694894
 2020-03-21 23:52:06,766 users_views.py[line:115] DEBUG RegistHandle: regist successfully
+2020-03-22 00:08:24,817 users_views.py[line:60] DEBUG loginHandle: regist successfully
+2020-03-22 00:10:45,719 users_views.py[line:61] DEBUG loginHandle: regist successfully
+2020-03-22 00:26:34,314 users_views.py[line:62] DEBUG loginHandle: regist successfully
+2020-03-22 00:28:05,128 users_views.py[line:64] DEBUG loginHandle: regist successfully
+2020-03-22 00:28:25,499 users_views.py[line:64] DEBUG loginHandle: regist successfully
+2020-03-22 00:28:35,169 users_views.py[line:64] DEBUG loginHandle: regist successfully
+2020-03-22 00:43:01,932 users_views.py[line:65] DEBUG loginHandle: regist successfully
+2020-03-22 10:36:41,990 users_views.py[line:63] DEBUG loginHandle: regist successfully
+2020-03-22 10:51:28,899 users_views.py[line:64] DEBUG loginHandle: regist successfully
+2020-03-22 10:53:17,451 users_views.py[line:65] DEBUG loginHandle: regist successfully
+2020-03-22 10:54:02,274 users_views.py[line:65] DEBUG loginHandle: regist successfully
+2020-03-22 11:13:53,632 users_views.py[line:74] DEBUG loginHandle: regist successfully
+2020-03-22 11:17:16,004 users_views.py[line:70] DEBUG loginHandle: regist successfully
+2020-03-22 11:20:34,848 users_views.py[line:71] DEBUG loginHandle: regist successfully
+2020-03-22 11:28:22,014 users_views.py[line:73] DEBUG loginHandle: regist successfully
+2020-03-22 11:30:39,121 users_views.py[line:73] DEBUG loginHandle: regist successfully
+2020-03-22 11:33:01,926 users_views.py[line:73] DEBUG loginHandle: regist successfully

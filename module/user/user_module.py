@@ -50,7 +50,6 @@ class Users(BaseDB):
         self.baiduOpenid = baiduOpenid
         self.status = status
 
-
 def initdb():
     BaseDB.metadata.create_all(engine)
 
