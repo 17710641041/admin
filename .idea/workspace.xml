@@ -4,7 +4,6 @@
     <list default="true" id="fe13ad61-6ef5-4b00-805c-552aeb8bb32e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/admin/goods/goods_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/admin/goods/goods_category.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/goods/goods_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/goods/goods_category.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/goods/goods_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/goods/goods_urls.py" afterDir="false" />
     </list>

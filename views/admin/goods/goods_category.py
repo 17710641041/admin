@@ -1,6 +1,8 @@
 """
     商品分类
 """
+import json
+
 import tornado.web
 from tornado.escape import json_decode
 from datetime import datetime
@@ -46,13 +48,41 @@ class addGoodsCategory(tornado.web.RequestHandler):
 
 
 class queryGoodsCategory(tornado.web.RequestHandler):
+    @property
+    def db(self):
+        return self.application.db
 
     def get(self):
+        ex_user = self.db.query(goodsCategory).all()
+        if ex_user:
+            data = json.dumps(ex_user, cls=AlchemyEncoder)
+            obj = json.loads(data)
+            self.db.commit()
+            self.db.close()
+            http_response(self, obj, 40000)
+        else:
+            http_response(self, ERROR_CODE['40006'], 40006)
+
+
+class delGoodsCategory(tornado.web.RequestHandler):
+    @property
+    def db(self):
+        return self.application.db
+
+    def post(self):
         try:
             # 获取入参
-            id = self.get_query_arguments("id")[0]
+            args = json_decode(self.request.body)
+            id = args['id']
         except:
             # 获取入参失败时，抛出错误码及错误信息
             http_response(self, ERROR_CODE['40001'], 40001)
             return
-        http_response(self, id, 40001)
+        ex_user = self.db.query(goodsCategory).filter_by(id=id).first()
+        if ex_user:
+            self.db.delete(ex_user)
+            self.db.commit()
+            self.db.close()
+            http_response(self, ERROR_CODE['40000'], 40000)
+        else:
+            http_response(self, ERROR_CODE['40007'], 40007)
