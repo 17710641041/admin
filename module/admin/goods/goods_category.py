@@ -13,23 +13,27 @@ class goodsCategory(BaseDB):
     pid = Column(Integer, nullable=False)
     icon = Column(String(255), nullable=False)
     name = Column(String(60), nullable=False)
+    sort = Column(Integer, nullable=False)
     isEnable = Column(Integer, nullable=True)
     addTime = Column(DateTime, nullable=True)
 
     def __init__(
-            self,
-            name,
-            addTime,
-            isEnable = 1,
-            icon = '',
-            pid = 0
+        self,
+        name,
+        addTime,
+        pid = 0,
+        sort= 99,
+        isEnable = 1,
+        icon = ''
+
     ):
         self.name = name
         self.addTime = addTime
-        self.isEnable = isEnable
-        self.addTime = addTime
-        self.icon = icon
         self.pid = pid
+        self.sort = sort
+        self.isEnable = isEnable
+        self.icon = icon
+
 
 def initdb():
     BaseDB.metadata.create_all(engine)
