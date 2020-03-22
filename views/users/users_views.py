@@ -31,6 +31,38 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 
+#获取用户信息
+class usersGet(tornado.web.RequestHandler):
+
+    @property
+    def db(self):
+        return self.application.db
+
+    def post(self):
+        try:
+            # 获取入参
+            args = json_decode(self.request.body)
+            phone = args['phone']
+        except:
+            # 获取入参失败时，抛出错误码及错误信息
+            logger.info("usersGet: request argument incorrect")
+            http_response(self, ERROR_CODE['40001'], 40001)
+            return
+        ex_user = self.db.query(Users).filter_by(phone=phone).first()
+        if ex_user:
+            #转json字符串
+            userData = json.dumps(ex_user, cls=AlchemyEncoder)
+            obj = json.loads(userData)
+            del obj["password"]
+            # 处理成功后，返回成功码“0”及成功信息“ok”
+            logger.debug("loginHandle: regist successfully")
+            http_response(self, obj, 40000)
+        else:
+            logger.debug("loginHandle: 用户信息不存在")
+            http_response(self, ERROR_CODE['40003'], 40003)
+
+
+
 #用户登录
 class loginHandle(tornado.web.RequestHandler):
 
