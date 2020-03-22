@@ -87,3 +87,12 @@
 2020-03-22 11:34:06,863 users_views.py[line:124] DEBUG RegistHandle: regist successfully
 2020-03-22 11:54:08,945 users_views.py[line:117] DEBUG RegistHandle: insert db, user: 18600694896
 2020-03-22 11:54:09,006 users_views.py[line:124] DEBUG RegistHandle: regist successfully
+2020-03-22 13:53:53,852 users_views.py[line:61] DEBUG loginHandle: 用户信息不存在
+2020-03-22 13:54:12,420 users_views.py[line:58] DEBUG loginHandle: regist successfully
+2020-03-22 14:03:41,020 users_views.py[line:58] DEBUG loginHandle: regist successfully
+2020-03-22 14:31:24,227 users_views.py[line:52] INFO usersGet: request argument incorrect
+2020-03-22 14:32:30,481 users_views.py[line:52] INFO usersGet: request argument incorrect
+2020-03-22 14:33:03,994 users_views.py[line:51] INFO usersGet: request argument incorrect
+2020-03-22 14:33:29,122 users_views.py[line:51] INFO usersGet: request argument incorrect
+2020-03-22 14:33:50,283 users_views.py[line:51] INFO usersGet: request argument incorrect
+2020-03-22 14:34:07,732 users_views.py[line:62] DEBUG loginHandle: regist successfully
